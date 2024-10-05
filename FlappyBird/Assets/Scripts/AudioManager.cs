@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip death;
     public AudioClip jump;
     public AudioClip point;
+    public AudioClip fall;
 
     private void Start()
     {

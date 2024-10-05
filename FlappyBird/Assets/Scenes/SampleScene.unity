@@ -458,6 +458,7 @@ MonoBehaviour:
   death: {fileID: 8300000, guid: 6f7e46d2c03f89e418e7e53ef985e67c, type: 3}
   jump: {fileID: 8300000, guid: 7c864d5357cd82645b9ea815d9a15240, type: 3}
   point: {fileID: 8300000, guid: 5d67ea8219229204abcb30a454d06285, type: 3}
+  fall: {fileID: 8300000, guid: 10b23ea276960cb48b535127a3a99d14, type: 3}
 --- !u!4 &313974288
 Transform:
   m_ObjectHideFlags: 0

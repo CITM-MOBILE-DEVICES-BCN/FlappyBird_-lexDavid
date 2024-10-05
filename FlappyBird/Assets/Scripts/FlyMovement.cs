@@ -42,12 +42,22 @@ public class FlyMovement : MonoBehaviour
         PipeMovement.pipeSpeed = 0f;
         Ground.speed = 0f;
         Invoke("GameOver", 1.75f);
-        audioManager.PlaySFX(audioManager.death);
+        StartCoroutine(PlayDeathAndFallSounds());
         gameObject.GetComponent<Collider2D>().enabled = false;
         isAlive = false;
 
     }
+    IEnumerator PlayDeathAndFallSounds()
+    {
+        // Reproducir sonido de muerte inmediatamente
+        audioManager.PlaySFX(audioManager.death);
 
+        // Esperar 1 segundo antes de reproducir el sonido de caída
+        yield return new WaitForSeconds(0.5f);
+
+        // Reproducir sonido de caída
+        audioManager.PlaySFX(audioManager.fall);
+    }
     public void GameOver()
     {
 
