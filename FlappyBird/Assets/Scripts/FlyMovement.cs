@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlyMovement : MonoBehaviour
 {
-    private float velocity = 1.75f;
+    public float velocity = 1.75f;
     private float rotationSpeed = 10f;
     public static Rigidbody2D rb;
     AudioManager audioManager;
