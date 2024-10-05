@@ -8,7 +8,7 @@ public class PipeMovement : MonoBehaviour
     // Start is called before the first frame update
 
 
-    private float pipeSpeed = 0.65f;
+    public static float pipeSpeed = 0.65f;
     void Start()
     {
         

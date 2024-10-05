@@ -6,7 +6,7 @@ public class Ground : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private float speed = 1.3f;
+    public static float speed = 1.3f;
     private float width = 6f;
     private SpriteRenderer spriteRenderer;
     private Vector2 startSize;
