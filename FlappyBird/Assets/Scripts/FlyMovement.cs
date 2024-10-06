@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FlyMovement : MonoBehaviour
 {
     public float velocity = 1.75f;
     private float rotationSpeed = 10f;
     public static Rigidbody2D rb;
     AudioManager audioManager;
+    GameManager managment;
     private bool isAlive = true;
     // Start is called before the first frame update
 
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        managment = GameObject.FindObjectOfType<GameManager>();
     }
     void Start()
     {
@@ -61,7 +64,6 @@ public class FlyMovement : MonoBehaviour
     public void GameOver()
     {
 
-        //canvas.SetActive(true);
-        Time.timeScale = 0f;
+        managment.FinalScreen();
     }
 }
