@@ -21,6 +21,8 @@ public class FlyMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+       
+        
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class FlyMovement : MonoBehaviour
         velocity = 0;
         PipeMovement.pipeSpeed = 0f;
         Ground.speed = 0f;
-        Invoke("GameOver", 1.75f);
+        Invoke("GameOver", 1.0f);
         StartCoroutine(PlayDeathAndFallSounds());
         gameObject.GetComponent<Collider2D>().enabled = false;
         isAlive = false;
