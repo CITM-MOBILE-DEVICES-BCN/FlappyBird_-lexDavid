@@ -10,7 +10,7 @@ public class FlyMovement : MonoBehaviour
     public static Rigidbody2D rb;
     AudioManager audioManager;
     GameManager managment;
-    private bool isAlive = true;
+    public static bool isPlaying;
     // Start is called before the first frame update
 
     private void Awake()
@@ -21,7 +21,7 @@ public class FlyMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-       
+        isPlaying = false;
         
     }
 
@@ -29,7 +29,7 @@ public class FlyMovement : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Space) && isAlive)
+        if (Input.GetKeyDown(KeyCode.Space) && isPlaying)
         {
 
             rb.velocity = Vector2.up * velocity;
@@ -49,18 +49,18 @@ public class FlyMovement : MonoBehaviour
         Invoke("GameOver", 1.0f);
         StartCoroutine(PlayDeathAndFallSounds());
         gameObject.GetComponent<Collider2D>().enabled = false;
-        isAlive = false;
+        isPlaying = false;
 
     }
     IEnumerator PlayDeathAndFallSounds()
     {
-        // Reproducir sonido de muerte inmediatamente
+       
         audioManager.PlaySFX(audioManager.death);
 
-        // Esperar 1 segundo antes de reproducir el sonido de caída
+        
         yield return new WaitForSeconds(0.5f);
 
-        // Reproducir sonido de caída
+        
         audioManager.PlaySFX(audioManager.fall);
     }
     public void GameOver()
