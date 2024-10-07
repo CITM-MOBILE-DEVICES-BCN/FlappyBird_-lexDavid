@@ -18,7 +18,7 @@ public class ScoreUI : MonoBehaviour
             instance = this;
         }
     }
-    void Start()
+    private void Start()
     {
         scoreText.text = score.ToString();
     }
